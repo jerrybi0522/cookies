@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="cookies.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			if (!Cookies.get('sugar')){
+				Cookies.set("sugar", 0);
+			}
+
+			if (!Cookies.get('chocolate')){
+				Cookies.set("chocolate", 0);
+			}
+
+			if (!Cookies.get('lemon')){
+				Cookies.set("lemon", 0);
+			}
+		
+
+			$("#sugar-cookie").text("You have " + Cookies.get('sugar') + " sugar cookie(s).");
+
+			$("#chocolate-cookie").text("You have " + Cookies.get('chocolate') + " chocolate cookie(s).");
+
+			$("#lemon-cookie").text("You have " + Cookies.get('lemon') + " lemon cookie(s).");
+
+			$("#sugar").on('click', function(){
+				Cookies.set("sugar", parseInt(Cookies.get('sugar')) + 1);
+				$("#sugar-cookie").text("You have " + Cookies.get('sugar') + " sugar cookie(s).");
+			})
+
+			$("#chocolate").on('click', function(){
+				Cookies.set("chocolate", parseInt(Cookies.get('chocolate')) + 1);
+				$("#chocolate-cookie").text("You have " + Cookies.get('chocolate') + " chocolate cookie(s).");
+			})
+
+			$("#lemon").on('click', function(){
+				Cookies.set("lemon", parseInt(Cookies.get('lemon')) + 1);
+				$("#lemon-cookie").text("You have " + Cookies.get('lemon') + " lemon cookie(s).");
+			})
+
+			$("#clear").on('click', function(){
+				Cookies.set("sugar", 0);
+				Cookies.set("chocolate", 0);
+				Cookies.set("lemon", 0);
+				$("#sugar-cookie").text("You have " + Cookies.get('sugar') + " sugar cookie(s).");
+				$("#chocolate-cookie").text("You have " + Cookies.get('chocolate') + " chocolate cookie(s).");
+				$("#lemon-cookie").text("You have " + Cookies.get('lemon') + " lemon cookie(s).");
+			})
+		})
+	</script>
+	<h1>What flavor of cookie would you like?</h1>
+	<button id="sugar">Sugar</button>
+	<button id="chocolate">Chocolate</button>
+	<button id="lemon">Lemon</button>
+	<p id="sugar-cookie"></p>
+	<p id="chocolate-cookie"></p>
+	<p id="lemon-cookie"></p>
+	<button id="clear">Do you not want cookies?</button>
+</body>
+</html>
