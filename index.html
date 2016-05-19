@@ -45,6 +45,21 @@
 
 			$("#clear").on('click', function(){
 				Cookies.set("sugar", 0);
+				$("#sugar-cookie").text("You have " + Cookies.get('sugar') + " sugar cookie(s).");
+			})
+
+			$("#clear").on('click', function(){
+				Cookies.set("chocolate", 0);
+				$("#chocolate-cookie").text("You have " + Cookies.get('chocolate') + " chocolate cookie(s).");
+			})
+
+			$("#clear").on('click', function(){
+				Cookies.set("lemon", 0);
+				$("#lemon-cookie").text("You have " + Cookies.get('lemon') + " lemon cookie(s).");
+			})
+
+			$("#clear").on('click', function(){
+				Cookies.set("sugar", 0);
 				Cookies.set("chocolate", 0);
 				Cookies.set("lemon", 0);
 				$("#sugar-cookie").text("You have " + Cookies.get('sugar') + " sugar cookie(s).");
@@ -60,6 +75,9 @@
 	<p id="sugar-cookie"></p>
 	<p id="chocolate-cookie"></p>
 	<p id="lemon-cookie"></p>
-	<button id="clear">Do you not want cookies?</button>
+	<button id="clear-sugar">Do you not want sugar cookies?</button>
+	<button id="clear-chocolate">Do you not want chocolate cookies?</button>
+	<button id="clear-lemon">Do you not want lemon cookies?</button>
+	<button id="clear">Do you not want any cookies?</button>
 </body>
 </html>
